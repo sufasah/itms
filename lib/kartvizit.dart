@@ -32,71 +32,73 @@ class Kartvizit extends StatelessWidget {
       appBar: AppBar(
         title: Text(pageTitle),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: 20),
-            getImage(),
-            SizedBox(height: 30),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Text(nameSurname),
-                    Text(title),
-                    Text(company),
-                  ],
-                ),
-              ],
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Column(
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(height: 20),
+              getImage(),
+              SizedBox(height: 30),
+              Row(
                 children: [
-                  Row(
+                  Column(
                     children: [
-                      Icon(Icons.email),
-                      SizedBox(width: spaceIconText),
-                      Text(email),
+                      Text(nameSurname),
+                      Text(title),
+                      Text(company),
                     ],
                   ),
-                  SizedBox(height: rowSpace),
-                  Row(
-                    children: [
-                      Icon(Icons.phone),
-                      SizedBox(width: spaceIconText),
-                      Text(phone),
-                    ],
-                    mainAxisAlignment: MainAxisAlignment.start,
-                  ),
-                  SizedBox(height: rowSpace),
-                  Row(
-                    children: [
-                      Icon(Icons.link),
-                      SizedBox(width: spaceIconText),
-                      Text(website),
-                    ],
-                    mainAxisAlignment: MainAxisAlignment.start,
-                  ),
-                  SizedBox(height: rowSpace),
-                  Row(
-                    children: [
-                      Icon(Icons.location_pin),
-                      SizedBox(width: spaceIconText),
-                      Flexible(
-                        child: Text(address),
-                      ),
-                    ],
-                    mainAxisAlignment: MainAxisAlignment.start,
-                  )
                 ],
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
               ),
-            ),
-          ],
+              SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.email),
+                        SizedBox(width: spaceIconText),
+                        Text(email),
+                      ],
+                    ),
+                    SizedBox(height: rowSpace),
+                    Row(
+                      children: [
+                        Icon(Icons.phone),
+                        SizedBox(width: spaceIconText),
+                        Text(phone),
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.start,
+                    ),
+                    SizedBox(height: rowSpace),
+                    Row(
+                      children: [
+                        Icon(Icons.link),
+                        SizedBox(width: spaceIconText),
+                        Text(website),
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.start,
+                    ),
+                    SizedBox(height: rowSpace),
+                    Row(
+                      children: [
+                        Icon(Icons.location_pin),
+                        SizedBox(width: spaceIconText),
+                        Flexible(
+                          child: Text(address),
+                        ),
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.start,
+                    )
+                  ],
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
