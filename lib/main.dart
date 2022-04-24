@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:itms/kartvizit.dart';
+import 'package:itms/kartvizit_page.dart';
+import 'package:itms/search.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,6 +35,23 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+          Container(
+            margin: EdgeInsets.only(right: 24.0),
+            child: IconButton(
+              icon: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },
+            ),
+          )
+        ],
       ),
       body: Center(
         child: Column(
@@ -43,7 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () => {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Kartvizit()),
+                        MaterialPageRoute(
+                            builder: (context) => KartvizitPage()),
                       )
                     },
                 child: Text('Kartvizite git'))
